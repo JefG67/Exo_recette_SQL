@@ -1,6 +1,10 @@
 1- Afficher toutes les recettes disponibles (nom de la recette, catégorie et temps de préparation) triées 
 de façon décroissante sur la durée de réalisation
 
+SELECT * 
+FROM recette
+ORDER BY temps DESC
+
 2- En modifiant la requête précédente, faites apparaître le nombre d’ingrédients nécessaire par recette.
 
 3- Afficher les recettes qui nécessitent au moins 30 min de préparation
