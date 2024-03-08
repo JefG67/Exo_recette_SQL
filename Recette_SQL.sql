@@ -13,13 +13,14 @@ ORDER BY temps DESC
 -- question)
 
 5-- Insérer une nouvelle recette : « Pâtes à la carbonara » dont la durée de réalisation est de 20 min avec 
-les instructions de votre choix. Pensez à alimenter votre base de données en conséquence afin de 
-pouvoir lister les détails de cette recettes (ingrédients)
+-- les instructions de votre choix. Pensez à alimenter votre base de données en conséquence afin de 
+-- pouvoir lister les détails de cette recettes (ingrédients)
 
 6-- Modifier le nom de la recette ayant comme identifiant id_recette = 3 (nom de la recette à votre 
-convenance)
+-- convenance)
 
 7-- Supprimer la recette n°2 de la base de données
+  
 8-- Afficher le prix total de la recette n°5
 
 9-- Afficher le détail de la recette n°5 (liste des ingrédients, quantités et prix)
