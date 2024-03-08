@@ -23,17 +23,35 @@ GROUP BY recette.nom
 
 3-- Afficher les recettes qui nécessitent au moins 30 min de préparation
 
+  SELECT *
+FROM recette
+WHERE recette.temps >= 30;
+
 4-- Afficher les recettes dont le nom contient le mot « Salade » (peu importe où est situé le mot en 
 -- question)
+
+  SELECT *
+FROM recette
+WHERE recette.nom  LIKE '%Salade%';
 
 5-- Insérer une nouvelle recette : « Pâtes à la carbonara » dont la durée de réalisation est de 20 min avec 
 -- les instructions de votre choix. Pensez à alimenter votre base de données en conséquence afin de 
 -- pouvoir lister les détails de cette recettes (ingrédients)
 
+  INSERT INTO recette(nom, temps, instruction)
+VALUES ('Pâtes à la carbonara', 20, 'faire cuir des pates,crémes et lardon');
+
 6-- Modifier le nom de la recette ayant comme identifiant id_recette = 3 (nom de la recette à votre 
 -- convenance)
 
+  UPDATE recette
+SET nom = 'Galette au pommes'
+WHERE id_recette = 3;
+  
 7-- Supprimer la recette n°2 de la base de données
+
+  DELETE FROM recette
+WHERE recette.nom = 'poulet au curry';
   
 8-- Afficher le prix total de la recette n°5
 
