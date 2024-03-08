@@ -7,6 +7,20 @@ ORDER BY temps DESC
 
 2-- En modifiant la requête précédente, faites apparaître le nombre d’ingrédients nécessaire par recette.
 
+  SELECT r.nom, COUNT(i.id_ingredient) AS nbIngredient
+FROM recette r 
+INNER JOIN preparer p ON p.id_recette = r.id_recette
+INNER JOIN ingredient i ON i.id_ingredient = p.id_ingredient
+GROUP BY r.nom
+
+sans alias 
+  
+  SELECT recette.nom, COUNT(ingredient.id_ingredient) AS nbIngredient
+FROM recette  
+INNER JOIN preparer  ON preparer.id_recette = recette.id_recette
+INNER JOIN ingredient  ON ingredient.id_ingredient = preparer.id_ingredient
+GROUP BY recette.nom
+
 3-- Afficher les recettes qui nécessitent au moins 30 min de préparation
 
 4-- Afficher les recettes dont le nom contient le mot « Salade » (peu importe où est situé le mot en 
