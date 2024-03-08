@@ -55,6 +55,12 @@ WHERE recette.nom = 'poulet au curry';
   
 8-- Afficher le prix total de la recette n°5
 
+  SELECT r.nom, SUM(i.prix*p.quantité) AS prixTotal
+FROM recette r
+INNER JOIN preparer p ON r.id_recette = p.id_recette
+INNER JOIN ingredient i ON  p.id_ingredient = i.id_ingredient
+WHERE r.id_recette = 5;
+
 9-- Afficher le détail de la recette n°5 (liste des ingrédients, quantités et prix)
 
 10-- Ajouter un ingrédient en base de données : Poivre, unité : cuillère à café, prix : 2.5 €
