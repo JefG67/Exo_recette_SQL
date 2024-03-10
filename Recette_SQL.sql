@@ -70,6 +70,9 @@ WHERE preparer.id_recette = 5;
 
 10-- Ajouter un ingrédient en base de données : Poivre, unité : cuillère à café, prix : 2.5 €
 
+  INSERT INTO ingredient(nom, prix ,unité_mesure)
+VALUES ('poivre', 2.5, 'cuillère à café');
+  
 11-- Modifier le prix de l’ingrédient n°12 (prix à votre convenance)
 
 12-- Afficher le nombre de recettes par catégories : X entrées, Y plats, Z desserts
