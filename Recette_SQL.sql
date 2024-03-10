@@ -81,6 +81,11 @@ WHERE id_ingredient = 14;
 
 12-- Afficher le nombre de recettes par catégories : X entrées, Y plats, Z desserts
 
+  SELECT catégorie_recette.nom, COUNT(recette.id_recette) AS nbreCatégorie
+FROM catégorie_recette
+LEFT JOIN recette ON catégorie_recette.`id_catégorie_recette`= recette.id_recette
+GROUP BY catégorie_recette.nom
+
 13-- Afficher les recettes qui contiennent l’ingrédient « Poulet »
 
 14-- Mettez à jour toutes les recettes en diminuant leur temps de préparation de 5 minutes 
