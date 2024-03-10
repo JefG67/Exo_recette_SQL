@@ -75,6 +75,10 @@ VALUES ('poivre', 2.5, 'cuillère à café');
   
 11-- Modifier le prix de l’ingrédient n°12 (prix à votre convenance)
 
+  UPDATE ingredient
+SET prix = '5'
+WHERE id_ingredient = 14;
+
 12-- Afficher le nombre de recettes par catégories : X entrées, Y plats, Z desserts
 
 13-- Afficher les recettes qui contiennent l’ingrédient « Poulet »
