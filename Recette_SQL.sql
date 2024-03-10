@@ -63,6 +63,11 @@ WHERE r.id_recette = 5;
 
 9-- Afficher le détail de la recette n°5 (liste des ingrédients, quantités et prix)
 
+  SELECT ingredient.nom, preparer.`quantité`, ingredient.prix
+FROM preparer 
+INNER JOIN ingredient ON preparer.id_ingredient = ingredient.id_ingredient
+WHERE preparer.id_recette = 5;
+
 10-- Ajouter un ingrédient en base de données : Poivre, unité : cuillère à café, prix : 2.5 €
 
 11-- Modifier le prix de l’ingrédient n°12 (prix à votre convenance)
