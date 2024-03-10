@@ -103,6 +103,10 @@ SET temps = temps - 5; hum a retester
 
 16-- Afficher la / les recette(s) les plus rapides à préparer
 
+  SELECT r.nom, SELECT MIN(r.temps),
+FROM recette r
+ne marche pas ...
+
 17-- Trouver les recettes qui ne nécessitent aucun ingrédient (par exemple la recette de la tasse d’eau 
 -- chaude qui consiste à verser de l’eau chaude dans une tasse)
 
