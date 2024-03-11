@@ -148,7 +148,7 @@ VALUES ('bonbon', 3, 'g');
 INSERT INTO preparer (id_recette, id_ingredient, quantité)
 VALUES (14, 63, 400);
 
-ne marche pas 
+
 
 20-- Bonus : Trouver la recette la plus coûteuse de la base de données (il peut y avoir des ex aequo, il est 
 -- donc exclu d’utiliser la clause LIMIT)
