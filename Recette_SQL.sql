@@ -103,19 +103,33 @@ SET temps = temps - 5;
 
   SELECT recette.nom
 FROM recette 
-INNER JOIN preparer ON preparer.id_recette = recette.id_recette
-INNER JOIN ingredient ON ingredient.id_ingredient = preparer.id_ingredient
-WHERE ingredient.prix <= 2
-GROUP BY recette.nom;     -- fonctionne pas correctement
+WHERE id_recette NOT IN (
+	SELECT recette.id_recette 
+	FROM preparer
+	INNER JOIN ingredient ON ingredient.id_ingredient = preparer.id_ingredient
+	INNER JOIN recette ON preparer.id_recette = recette.id_recette 
+	AND ingredient.prix > 2
+)
 
 16-- Afficher la / les recette(s) les plus rapides à préparer
 
-  SELECT r.nom, SELECT MIN(r.temps),
-FROM recette r
-ne marche pas ...
+  SELECT nom, temps
+FROM recette
+WHERE temps = (SELECT MIN(temps) FROM recette)
 
 17-- Trouver les recettes qui ne nécessitent aucun ingrédient (par exemple la recette de la tasse d’eau 
 -- chaude qui consiste à verser de l’eau chaude dans une tasse)
+
+  SELECT nom
+FROM recette
+LEFT JOIN preparer ON recette.id_recette = preparer.id_recette
+WHERE preparer.id_recette IS NULL;
+
+SELECT nom
+FROM recette
+WHERE id_recette NOT IN (
+	SELECT id_recette FROM preparer
+);
 
 18-- Trouver les ingrédients qui sont utilisés dans au moins 3 recettes
 
