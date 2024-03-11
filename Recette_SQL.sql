@@ -161,7 +161,7 @@ INNER JOIN ingredient i ON  p.id_ingredient = i.id_ingredient
 GROUP BY r.id_recette
 ORDER BY prixTotal DESC
 
---je cree une view a partir duquel je fais ma requete pour qu'il me renvoie le prix le plus chere 
+--je cree une view(totale_recette a partir duquel je fais ma requete pour qu'il me renvoie le prix le plus chere 
 SELECT *
 FROM recettes_jefguilpain.total_recette
 WHERE prixTotal >= ALL(
