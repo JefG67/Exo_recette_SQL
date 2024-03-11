@@ -101,6 +101,13 @@ SET temps = temps - 5;
 
 15-- Afficher les recettes qui ne nécessitent pas d’ingrédients coûtant plus de 2€ par unité de mesure
 
+  SELECT recette.nom
+FROM recette 
+INNER JOIN preparer ON preparer.id_recette = recette.id_recette
+INNER JOIN ingredient ON ingredient.id_ingredient = preparer.id_ingredient
+WHERE ingredient.prix <= 2
+GROUP BY recette.nom;     -- fonctionne pas correctement
+
 16-- Afficher la / les recette(s) les plus rapides à préparer
 
   SELECT r.nom, SELECT MIN(r.temps),
