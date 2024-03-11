@@ -124,7 +124,7 @@ WHERE temps = (SELECT MIN(temps) FROM recette)
 FROM recette
 LEFT JOIN preparer ON recette.id_recette = preparer.id_recette
 WHERE preparer.id_recette IS NULL;
-
+ --ou
 SELECT nom
 FROM recette
 WHERE id_recette NOT IN (
