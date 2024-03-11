@@ -133,13 +133,19 @@ WHERE id_recette NOT IN (
 
 18-- Trouver les ingrédients qui sont utilisés dans au moins 3 recettes
 
+	SELECT ingredient.nom
+FROM ingredient 
+INNER JOIN preparer ON ingredient.id_ingredient = preparer.id_ingredient
+GROUP BY ingredient.nom
+HAVING COUNT(preparer.id_recette) >3
+
 19-- Ajouter un nouvel ingrédient à une recette spécifique
 
-  INSERT INTO ingredient (id_ingredient, nom, prix, unité_mesure)
-VALUES (63, 'bonbon', 3, 'g')
+INSERT INTO ingredient (nom, prix, unité_mesure)
+VALUES ('bonbon', 3, 'g');
 
 
-INSERT INTO preparer (id_recette, id_ingredient, quantite)
+INSERT INTO preparer (id_recette, id_ingredient, quantité)
 VALUES (14, 63, 400);
 
 ne marche pas 
