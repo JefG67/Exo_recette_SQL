@@ -83,8 +83,8 @@ WHERE id_ingredient = 14;
 
   SELECT catégorie_recette.nom, COUNT(recette.id_recette) AS nbreCatégorie
 FROM catégorie_recette
-LEFT JOIN recette ON catégorie_recette.`id_catégorie_recette`= recette.id_recette
-GROUP BY catégorie_recette.nom
+LEFT JOIN recette ON catégorie_recette.`id_catégorie_recette`= recette.id_categorie_recette
+GROUP BY catégorie_recette.`id_catégorie_recette`
 
 13-- Afficher les recettes qui contiennent l’ingrédient « Poulet »
 
