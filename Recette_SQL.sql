@@ -97,7 +97,7 @@ WHERE ingredient.nom  LIKE '%poulet%'
 14-- Mettez à jour toutes les recettes en diminuant leur temps de préparation de 5 minutes 
 
   UPDATE recette
-SET temps = temps - 5; hum a retester
+SET temps = temps - 5;
 
 15-- Afficher les recettes qui ne nécessitent pas d’ingrédients coûtant plus de 2€ par unité de mesure
 
