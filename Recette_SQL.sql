@@ -152,3 +152,21 @@ VALUES (14, 63, 400);
 
 20-- Bonus : Trouver la recette la plus coûteuse de la base de données (il peut y avoir des ex aequo, il est 
 -- donc exclu d’utiliser la clause LIMIT)
+
+CREATE VIEW total_recette AS recettes_jefguilpain
+SELECT r.nom, SUM(i.prix*p.quantité) AS prixTotal
+FROM recette r
+INNER JOIN preparer p ON r.id_recette = p.id_recette
+INNER JOIN ingredient i ON  p.id_ingredient = i.id_ingredient
+GROUP BY r.id_recette
+ORDER BY prixTotal DESC
+
+--je cree une view a partir duquel je fais ma requete pour qu'il me renvoie le prix le plus chere 
+SELECT *
+FROM recettes_jefguilpain.total_recette
+WHERE prixTotal >= ALL(
+	SELECT prixTotal
+	FROM recettes_jefguilpain.total_recette
+);
+
+
